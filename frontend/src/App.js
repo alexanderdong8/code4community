@@ -62,13 +62,6 @@ function App() {
     fetchChatHistory();
   }, []);
 
-  // let DocsUnordered = [];
-  // db.collection('chat').get().then((querySnapshot) => {
-  //   DocsUnordered=querySnapshot.docs.map(doc => doc.data());
-  //   console.log(DocsUnordered)
-  // })
-  
-
   
   
   let message = "";
@@ -77,7 +70,9 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    message = inputRef.current.value;
+    message = inputRef.current.value.trim();
+    
+    
 
     fetch("http://localhost:8000/api/submit", {
       method: "POST", 
@@ -107,7 +102,7 @@ function App() {
       <div>You can type a message into this field and hit the enter key to add it to the chat below</div>
   
       <form onSubmit={handleSubmit}>
-        <input type="text" maxLength="128" placeholder="Enter your message" ref={inputRef}></input>
+        <input type="text" maxLength="3" placeholder="Enter your message" ref={inputRef}  required />
       </form>
 
     <h2>Message History</h2>

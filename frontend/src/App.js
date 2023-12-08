@@ -102,7 +102,7 @@ function App() {
       <div>You can type a message into this field and hit the enter key to add it to the chat below</div>
   
       <form onSubmit={handleSubmit}>
-        <input type="text" maxLength="3" placeholder="Enter your message" ref={inputRef}  required />
+        <input type="text" maxLength="128" placeholder="Enter your message" ref={inputRef}  required />
       </form>
 
     <h2>Message History</h2>

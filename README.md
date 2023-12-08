@@ -3,8 +3,7 @@ This program is a chat application where users can log in using Google authentic
 
 ## Components explanaton
 My application is split into two components, the frontend and backend.  The frontend is powered by REACT and is how the user is able to see everything on the frontend and submit messages to post.
-The user can log in with google, which is powered by firebase authtncation.  
-When a user submits a message in the form, the time of the message, the user that sent it, and the message itself gets sent to the backend via a POST request and the backend then pushes it to the cloud firestore database. 
+The user can log in with google, which is powered by firebase authentication.  When a user submits a message in the form, the time of the message, the user that sent it, and the message itself gets sent to the backend via a POST request and the backend then pushes it to the cloud firestore database. 
 
 ## Fullfillment of requirements
 User can submit a message using this form where I put a restriction of "required" and "maxLength="128" on the HTML input tag, to prevent empty message and  a max message length of 128.  

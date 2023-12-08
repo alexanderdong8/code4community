@@ -2,8 +2,9 @@
 This program is a chat application where users can log in using Google authentication, submit messages, and view their messages.
 
 ## Components explanaton
-My application is split into two components, the frontend and backend.  The frontend is powered by REACT and is how the user is able to see everything on the frontend and submit messages to post.
-The user can log in with google, which is powered by firebase authentication.  When a user submits a message in the form, the time of the message, the user that sent it, and the message itself gets sent to the backend via a POST request and the backend then pushes it to the cloud firestore database. 
+My application is split into two components, the frontend and backend.  The frontend is powered by react and the backend consists of NodeJS, Express and firbebase.  The frontend/app.js file has consists of all the code in the frontend.  This includes a form that when submitted will send a POST request to the backend, which will then upload to the database.  The frontend also shows all the previous messages by mapping through a list of the docs from the firestore database.  The signInWithGoogle function provides the option to sign in using a google account, which is powered by firebase authentication. 
+
+When a user submits the form, the message and the email of the logged in account are sent to the backend with a POST request.  The backend, which is powered by NodeJS and express, will recieve the post request and log the message, email, and the time into the databse.  
 
 ## Fullfillment of requirements
 User can submit a message using this form where I put a restriction of "required" and "maxLength="128" on the HTML input tag, to prevent empty message and  a max message length of 128.  
@@ -17,7 +18,7 @@ npm i
 npm start
 ```
 
-To start the back nd run the commands
+To start the back end run the commands
 ```sh
 cd backend
 npm i
